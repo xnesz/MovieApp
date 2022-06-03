@@ -1,0 +1,51 @@
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid white;
+}
+@media screen and (min-width: 769px) {
+    #navbar {
+        padding: 0px 100px;
+    }
+}
+
+#navbar .navbtn.homelink {
+    padding: 0px 5em;
+}
+
+#navbar .navlinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+@media screen and (max-width: 768px) {
+    #navbar > .navlinks {
+        display: none;
+    }
+}
+
+#navbar .searchbar {
+    max-width: 400px;
+    width: 20vw;
+    padding: 1em 1em;
+    height: 1em;
+    background: none;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#navbar .navbtn button {
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5em 2em;
+    color: #fff;
+}
+
+.navbtn:hover button, .navbtn.active button {
+    color: #15cdfc !important;
+}
