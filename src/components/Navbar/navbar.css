@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: space-around;
     border-bottom: 1px solid white;
+    margin-bottom: 1em;
 }
 @media screen and (min-width: 769px) {
     #navbar {
@@ -19,8 +20,8 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    
 }
+
 @media screen and (max-width: 768px) {
     #navbar > .navlinks {
         display: none;
@@ -32,9 +33,10 @@
     width: 20vw;
     padding: 1em 1em;
     height: 1em;
+    color: white;
     background: none;
     border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #navbar .navbtn button {
@@ -47,5 +49,5 @@
 }
 
 .navbtn:hover button, .navbtn.active button {
-    color: #15cdfc !important;
+    color: #fcc615 !important;
 }

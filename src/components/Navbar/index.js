@@ -1,4 +1,4 @@
-
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './navbar.css';
 
@@ -6,7 +6,6 @@ const links = {
     'Popular': '/popular',
     'Categories': '/categories',
     'All': '/all',
-    'Sign Up': '/signup',
 };
 
 export default function Navbar() {
@@ -35,5 +34,8 @@ function NavBtn({ children, link, className = '' }) {
 }
 
 function SearchBar() {
-    return <input className='searchbar' type={'text'} placeholder={'Search'} />
+    return <form action="/search" method='get'>
+        <input name="query" className='searchbar' type='text' placeholder={'Search'} />
+        <button type="submit">Search</button>
+    </form>
 }
