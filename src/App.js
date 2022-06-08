@@ -7,7 +7,9 @@ import Home from "./pages/Home";
 import Popular from "./pages/Popular";
 import Search from "./pages/Search";
 import All from "./pages/All";
+import TopTv from "./pages/TopTv";
 import Upcoming from "./pages/Upcoming";
+import LatestTv from "./pages/LatestTv";
 import './App.css';
 
 function App() {
@@ -28,9 +30,10 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/all" element={<All />} />
         <Route path="/upcoming" element={<Upcoming />} />
+        <Route path="/toptv" element={<TopTv />} />
+        <Route path="/latestTv" element={<LatestTv />} />
       </Routes>
     </Router>
-    
   );
 }
 

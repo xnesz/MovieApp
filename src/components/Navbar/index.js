@@ -6,6 +6,8 @@ const links = {
     'Popular': '/popular',
     'All': '/all',
     'Upcoming': '/upcoming',
+    'Top TVshows': '/toptv',
+    'Airing TVshows': '/latestTv',
 };
 
 export default function Navbar() {

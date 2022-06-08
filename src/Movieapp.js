@@ -15,14 +15,23 @@ const API_URL="https://api.themoviedb.org/3/movie/popular?api_key=4c7db73d8ed85f
 const API_ALL="https://api.themoviedb.org/3/movie/now_playing?api_key=4c7db73d8ed85fc0bdfe380c0e20e1a2&language=en-US&page=2"; 
 const API_SEARCH="https://api.themoviedb.org/3/search/movie?api_key=4c7db73d8ed85fc0bdfe380c0e20e1a2&query="; 
 const API_UPCOMING="https://api.themoviedb.org/3/movie/upcoming?api_key=4c7db73d8ed85fc0bdfe380c0e20e1a2&language=en-US&page=1";
+const API_TV="https://api.themoviedb.org/3/tv/top_rated?api_key=4c7db73d8ed85fc0bdfe380c0e20e1a2&language=en-US&page=1";
+const API_LatestTv="https://api.themoviedb.org/3/tv/on_the_air?api_key=4c7db73d8ed85fc0bdfe380c0e20e1a2&language=en-US&page=1";
 
-function Movieapp({ searchTerm, popular, all, upcoming }) { 
+
+function Movieapp({ searchTerm, popular, all, upcoming, toptv, latestTv }) { 
 
   const [movies, setMovies]=useState([]);
 
   useEffect(() => {
     if(popular){
       fetchData(API_URL);
+    }
+  }, [])
+
+  useEffect(() => {
+    if(latestTv){
+      fetchData(API_LatestTv);
     }
   }, [])
 
@@ -35,6 +44,12 @@ function Movieapp({ searchTerm, popular, all, upcoming }) {
   useEffect(() => {
     if(upcoming){
       fetchData(API_UPCOMING);
+    }
+  }, [])
+
+  useEffect(() => {
+    if(toptv){
+      fetchData(API_TV);
     }
   }, [])
 
