@@ -5,22 +5,38 @@ import Navbar from "./components/Navbar";
 import {Container, Nav, Form, FormControl, Button} from 'react-bootstrap'; 
 
 /* 
-
 const findMoviesByTitle = (title) => { 
-
   const API_KEY = process.env.REACT_APP_API_KEY; 
-
   return http.get(`search/movie?api_key=${API_KEY}&query=${title}`); 
-
 };*/ 
 
  
 const API_URL="https://api.themoviedb.org/3/movie/popular?api_key=4c7db73d8ed85fc0bdfe380c0e20e1a2"; 
-const API_SEARCH="https://api.themoviedb.org/3/search/movie?api_key=4c7db73d8ed85fc0bdfe380c0e20e1a2&query=" 
+const API_ALL="https://api.themoviedb.org/3/movie/now_playing?api_key=4c7db73d8ed85fc0bdfe380c0e20e1a2&language=en-US&page=2"; 
+const API_SEARCH="https://api.themoviedb.org/3/search/movie?api_key=4c7db73d8ed85fc0bdfe380c0e20e1a2&query="; 
+const API_UPCOMING="https://api.themoviedb.org/3/movie/upcoming?api_key=4c7db73d8ed85fc0bdfe380c0e20e1a2&language=en-US&page=1";
 
-function Movieapp({ searchTerm }) { 
+function Movieapp({ searchTerm, popular, all, upcoming }) { 
 
   const [movies, setMovies]=useState([]);
+
+  useEffect(() => {
+    if(popular){
+      fetchData(API_URL);
+    }
+  }, [])
+
+  useEffect(() => {
+    if(all){
+      fetchData(API_ALL);
+    }
+  }, [])
+
+  useEffect(() => {
+    if(upcoming){
+      fetchData(API_UPCOMING);
+    }
+  }, [])
 
   useEffect(() => {
     if(searchTerm){
@@ -31,18 +47,22 @@ function Movieapp({ searchTerm }) {
   const searchMovie = async()=>{ 
     console.log('Searching') 
 
-    try{ 
-      const url= API_SEARCH + searchTerm; 
-      const res= await fetch(url); 
-      const data= await res.json(); 
-      console.log(data); 
-      setMovies(data.results); 
-    } 
-
-    catch(e){ 
-      console.log(e); 
-    } 
+    const url= API_SEARCH + searchTerm; 
+    fetchData(url);
   } 
+
+    const fetchData = async (url) => {
+      try{ 
+        const res= await fetch(url); 
+        const data= await res.json(); 
+        console.log(data); 
+        setMovies(data.results); 
+      } 
+  
+      catch(e){ 
+        console.log(e); 
+      } 
+    }
 
     return ( 
     <>         

@@ -6,6 +6,8 @@ import MovieData from './Movieapp';
 import Home from "./pages/Home";
 import Popular from "./pages/Popular";
 import Search from "./pages/Search";
+import All from "./pages/All";
+import Upcoming from "./pages/Upcoming";
 import './App.css';
 
 function App() {
@@ -24,9 +26,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/popular" element={<Popular />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/all" element={<All />} />
+        <Route path="/upcoming" element={<Upcoming />} />
       </Routes>
-
-        
     </Router>
     
   );

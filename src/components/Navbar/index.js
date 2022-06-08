@@ -4,8 +4,8 @@ import './navbar.css';
 
 const links = {
     'Popular': '/popular',
-    'Categories': '/categories',
     'All': '/all',
+    'Upcoming': '/upcoming',
 };
 
 export default function Navbar() {
@@ -16,7 +16,7 @@ export default function Navbar() {
     });
     return <div id="navbar">
         <NavBtn className='homelink' link={'/'}>
-            <h1>MovieTime</h1>
+            <h1>MovieFlix</h1>
         </NavBtn>
         <SearchBar />
         <div className={'navlinks'}>
@@ -34,7 +34,7 @@ function NavBtn({ children, link, className = '' }) {
 }
 
 function SearchBar() {
-    return <form action="/search" method='get'>
+    return <form id="knapp" action="/search" method='get'>
         <input name="query" className='searchbar' type='text' placeholder={'Search'} />
         <button type="submit">Search</button>
     </form>

@@ -1,6 +1,11 @@
 .App {
   text-align: center;
-  background: url(https://ae01.alicdn.com/kf/HTB1bdPcKXXXXXXZXpXXq6xXFXXXT/A192-Loop-time-two-gun-film-movie-poster-Art-Wall-Pictures-for-Living-Room-in-Canvas.jpg_Q90.jpg);
+}
+
+body {
+  background-image: url("https://movieflix.me/seo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App-logo {
