@@ -9,7 +9,8 @@ import Search from "./pages/Search";
 import All from "./pages/All";
 import TopTv from "./pages/TopTv";
 import Upcoming from "./pages/Upcoming";
-import LatestTv from "./pages/LatestTv";
+import Login from "./pages/Login";
+
 import './App.css';
 
 function App() {
@@ -23,7 +24,6 @@ function App() {
     
     <Router>
       <Navbar search={search} />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/popular" element={<Popular />} />
@@ -31,7 +31,7 @@ function App() {
         <Route path="/all" element={<All />} />
         <Route path="/upcoming" element={<Upcoming />} />
         <Route path="/toptv" element={<TopTv />} />
-        <Route path="/latestTv" element={<LatestTv />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );

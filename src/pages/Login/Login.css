@@ -1,0 +1,15 @@
+
+/*VANESSAS KOD*/
+.Login
+{
+    max-width: 400px;
+    margin: 200px auto 0px;
+    background-color: rgb(41, 41, 41);
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+}
+
+form > div { 
+    margin-bottom: 10px;
+}

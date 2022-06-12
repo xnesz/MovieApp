@@ -7,7 +7,7 @@ const links = {
     'All': '/all',
     'Upcoming': '/upcoming',
     'Top TVshows': '/toptv',
-    'Airing TVshows': '/latestTv',
+    'Login': '/login',
 };
 
 export default function Navbar() {
